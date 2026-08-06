@@ -84,8 +84,9 @@ header {
 }
 
 .nav-inner {
-  max-width: 1080px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 0 20px;
   height: 60px;
   display: flex;
@@ -102,7 +103,6 @@ header {
   color: #fff;
   text-decoration: none;
   flex-shrink: 0;
-  margin-right: auto;
   transition: opacity 0.2s var(--ease);
 }
 
@@ -124,7 +124,6 @@ nav {
   padding: 4px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.06);
-  margin-left: auto;
 }
 
 nav .nav-link {
