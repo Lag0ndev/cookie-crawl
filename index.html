@@ -29,6 +29,16 @@
           <span class="nav-label">Dashboard</span>
         </button>
 
+        <button type="button" class="nav-link" data-page="bakery" onclick="showPage('bakery')" title="Bakery">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 21h16"/>
+            <path d="M6 21V10l6-4 6 4v11"/>
+            <path d="M10 21v-5h4v5"/>
+            <path d="M8 10h.01M16 10h.01"/>
+          </svg>
+          <span class="nav-label">Bakery</span>
+        </button>
+
         <button type="button" class="nav-link" data-page="leaderboard" onclick="showPage('leaderboard')" title="Leaderboard">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M8 21h8"/>
@@ -63,6 +73,7 @@
   </header>
 
   <main>
+    <!-- DASHBOARD -->
     <section id="dashboard" class="section active">
       <div class="page-head">
         <div>
@@ -82,6 +93,82 @@
       </div>
     </section>
 
+    <!-- BAKERY -->
+    <section id="bakery" class="section">
+      <div class="page-head">
+        <div>
+          <h1>Bakery</h1>
+          <p>Bake cookies in your oven</p>
+        </div>
+      </div>
+
+      <div class="bakery-layout">
+        <div class="oven-card" id="oven-card">
+          <div class="oven-header">
+            <span class="oven-label">Oven 1</span>
+            <span class="oven-status" id="oven-status">Ready</span>
+          </div>
+
+          <div class="oven-body" id="oven-body">
+            <div class="oven-window">
+              <div class="oven-glow" id="oven-glow"></div>
+              <div class="cookie-in-oven" id="cookie-visual">
+                <svg class="cookie-svg" viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="26" fill="#d4a574" stroke="#b8956a" stroke-width="2"/>
+                  <circle cx="22" cy="24" r="3" fill="#5c4033"/>
+                  <circle cx="38" cy="22" r="2.5" fill="#5c4033"/>
+                  <circle cx="28" cy="36" r="2.8" fill="#5c4033"/>
+                  <circle cx="42" cy="34" r="3" fill="#5c4033"/>
+                  <circle cx="24" cy="44" r="2.2" fill="#5c4033"/>
+                  <circle cx="36" cy="42" r="2.5" fill="#5c4033"/>
+                </svg>
+              </div>
+              <div class="heat-lines" id="heat-lines" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bake-progress-wrap" id="progress-wrap" hidden>
+            <div class="bake-progress-bar">
+              <div class="bake-progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="bake-timer" id="bake-timer">1:00</div>
+          </div>
+
+          <div class="oven-actions">
+            <button type="button" class="btn-bake" id="bake-btn" onclick="startBake()">
+              Bake Classic Cookie
+            </button>
+            <p class="bake-hint" id="bake-hint">Takes 1 minute · placeholder only</p>
+          </div>
+        </div>
+
+        <div class="recipe-card">
+          <h3>Available recipe</h3>
+          <div class="recipe-row">
+            <div class="recipe-icon">
+              <svg viewBox="0 0 64 64" fill="none" width="40" height="40">
+                <circle cx="32" cy="32" r="26" fill="#d4a574" stroke="#b8956a" stroke-width="2"/>
+                <circle cx="22" cy="24" r="3" fill="#5c4033"/>
+                <circle cx="38" cy="22" r="2.5" fill="#5c4033"/>
+                <circle cx="28" cy="36" r="2.8" fill="#5c4033"/>
+                <circle cx="42" cy="34" r="3" fill="#5c4033"/>
+                <circle cx="24" cy="44" r="2.2" fill="#5c4033"/>
+                <circle cx="36" cy="42" r="2.5" fill="#5c4033"/>
+              </svg>
+            </div>
+            <div>
+              <div class="recipe-name">Classic Cookie</div>
+              <div class="recipe-meta">1 min · 1 oven</div>
+            </div>
+          </div>
+          <p class="recipe-note">You start with this one recipe. More will unlock later.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERBOARD -->
     <section id="leaderboard" class="section">
       <div class="page-head">
         <div>
@@ -105,6 +192,7 @@
       </div>
     </section>
 
+    <!-- STATS -->
     <section id="stats" class="section">
       <div class="page-head">
         <div>
@@ -126,6 +214,7 @@
       </div>
     </section>
 
+    <!-- SETTINGS -->
     <section id="settings" class="section">
       <div class="page-head">
         <div>
