@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Crawl</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="snow"></div>
+
+  <header>
+    <div class="logo">🍪 Cookie Crawl</div>
+    <nav>
+      <a href="#how">How it Works</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">🎄 Live Event</div>
+      <h1>Cookie Crawl</h1>
+      <p class="tagline">Send your helpers on cozy winter journeys.<br>Gather ingredients. Bake cookies. Climb the leaderboard.</p>
+      <div class="cta-row">
+        <a href="#join" class="btn primary">Join the Crawl</a>
+        <a href="#how" class="btn secondary">How it Works</a>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <h2>How Cookie Crawl Works</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🛷</div>
+          <h3>1. Send Helpers</h3>
+          <p>Pick a helper and send them out into the snowy woods, cozy kitchens, and frozen markets.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🥕</div>
+          <h3>2. Gather Ingredients</h3>
+          <p>They return with flour, sugar, chocolate chips, candy canes, and rare holiday spices.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🍪</div>
+          <h3>3. Bake & Rank</h3>
+          <p>Turn ingredients into cookies. The more you bake, the higher you climb on the live leaderboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="flavor">
+      <h2>What You Can Bake</h2>
+      <div class="cookies">
+        <div class="cookie">Classic Chocolate Chip</div>
+        <div class="cookie">Peppermint Crunch</div>
+        <div class="cookie">Gingerbread Snap</div>
+        <div class="cookie">Snowball Sugar</div>
+        <div class="cookie">Caramel Sea Salt</div>
+        <div class="cookie">Holiday Mystery</div>
+      </div>
+    </section>
+
+    <section id="join" class="join">
+      <h2>Ready to Crawl?</h2>
+      <p>This is a live community event for fans, friends & subscribers.<br>Drop your name below and get ready for the next round.</p>
+      <form class="join-form" onsubmit="event.preventDefault(); alert('Thanks for joining! (This is a demo form)');">
+        <input type="text" placeholder="Your name or handle" required />
+        <button type="submit" class="btn primary">I'm In 🍪</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Cookie Crawl • Made for the community • 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
