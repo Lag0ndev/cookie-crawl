@@ -99,39 +99,21 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   color: #fff;
   text-decoration: none;
   flex-shrink: 0;
+  margin-right: auto;
   transition: opacity 0.2s var(--ease);
 }
 
 .logo:hover {
-  opacity: 0.9;
-}
-
-.logo-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fde68a;
-  transition: transform 0.3s var(--ease), background 0.2s;
-}
-
-.logo:hover .logo-mark {
-  transform: scale(1.05) rotate(-4deg);
-  background: rgba(255, 255, 255, 0.14);
+  opacity: 0.88;
 }
 
 .logo-text {
   font-family: "Outfit", system-ui, sans-serif;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   letter-spacing: -0.03em;
 }
 
@@ -142,6 +124,7 @@ nav {
   padding: 4px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-left: auto;
 }
 
 nav .nav-link {
@@ -320,10 +303,6 @@ main {
 
 /* Mobile */
 @media (max-width: 640px) {
-  .logo-text {
-    display: none;
-  }
-
   nav .nav-label {
     display: none;
   }
