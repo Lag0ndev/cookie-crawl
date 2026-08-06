@@ -11,17 +11,15 @@ function showPage(page) {
     btn.classList.toggle("active", btn.dataset.page === page);
   });
 
-  // Keep URL in sync (optional, nice for later)
   try {
-    const path = "/" + (page === "dashboard" ? "" : page);
+    const path = page === "dashboard" ? "/" : "/" + page;
     const cur = (location.pathname || "/").replace(/\/+$/, "") || "/";
-    if (cur !== path && cur !== "/" + page) {
-      history.pushState({ page }, "", path || "/");
+    if (cur !== path) {
+      history.pushState({ page }, "", path);
     }
   } catch (_) {}
 }
 
-// Restore page from URL on load
 function pageFromPath() {
   try {
     const parts = (location.pathname || "/").split("/").filter(Boolean);

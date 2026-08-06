@@ -1,23 +1,27 @@
 # Cookie Crawl
 
-Christmas idle event dashboard for fans & friends.
+Christmas idle event dashboard.
 
-## Structure
+## Files
 
-- `index.html` — main page shell + top bar
-- `style.css` — Christmas UI (pine green top bar, cream/snow background)
-- `script.js` — simple page switching
+- `index.html` — structure + top bar
+- `style.css` — Christmas UI, animations, typography
+- `script.js` — page switching
 
 ## Top bar
 
-- **Dashboard** — home
-- **Leaderboard** — rankings
-- **Stats** — personal stats
-- **Settings** — preferences
+Icon-only on mobile, icons + labels on desktop:
+
+- Dashboard
+- Leaderboard
+- Stats
+- Settings
+
+No emojis — SVG icons only.
 
 ## Deploy
 
-Static site → works great on Vercel.
+Static site. Import to Vercel or run:
 
 ```bash
 npx serve .
