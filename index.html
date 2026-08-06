@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Crawl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="/" class="logo" onclick="showPage('dashboard'); return false;">
+        <span class="logo-icon">🍪</span>
+        <span class="logo-text">Cookie Crawl</span>
+      </a>
+
+      <nav>
+        <button type="button" class="nav-link active" data-page="dashboard" onclick="showPage('dashboard')">Dashboard</button>
+        <button type="button" class="nav-link" data-page="leaderboard" onclick="showPage('leaderboard')">Leaderboard</button>
+        <button type="button" class="nav-link" data-page="stats" onclick="showPage('stats')">Stats</button>
+        <button type="button" class="nav-link" data-page="settings" onclick="showPage('settings')">Settings</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="section active">
+      <div class="page-head">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Your Cookie Crawl home</p>
+        </div>
+      </div>
+      <div class="empty-state">
+        <div class="empty-icon">🎄</div>
+        <h2>Nothing here yet</h2>
+        <p>Content for the main page will go here soon.</p>
+      </div>
+    </section>
+
+    <!-- LEADERBOARD -->
+    <section id="leaderboard" class="section">
+      <div class="page-head">
+        <div>
+          <h1>Leaderboard</h1>
+          <p>Who’s baking the most cookies</p>
+        </div>
+      </div>
+      <div class="empty-state">
+        <div class="empty-icon">🏆</div>
+        <h2>Nothing here yet</h2>
+        <p>Leaderboard will appear here.</p>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="stats" class="section">
+      <div class="page-head">
+        <div>
+          <h1>Stats</h1>
+          <p>Your journeys, ingredients & cookies</p>
+        </div>
+      </div>
+      <div class="empty-state">
+        <div class="empty-icon">📊</div>
+        <h2>Nothing here yet</h2>
+        <p>Stats will appear here.</p>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settings" class="section">
+      <div class="page-head">
+        <div>
+          <h1>Settings</h1>
+          <p>Preferences for Cookie Crawl</p>
+        </div>
+      </div>
+      <div class="empty-state">
+        <div class="empty-icon">⚙️</div>
+        <h2>Nothing here yet</h2>
+        <p>Settings will appear here.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
