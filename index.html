@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contest of Candy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link id="font-link" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-layout="topbar">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">COC</div>
+    <nav class="sidebar-nav">
+      <button type="button" class="side-link active" data-page="settings" onclick="showPage('settings')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01A1.65 1.65 0 0 0 9 3.09V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+    </nav>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar" id="topbar">
+      <div class="topbar-inner">
+        <a href="/" class="logo" onclick="showPage('settings'); return false;">Contest of Candy</a>
+        <nav class="top-nav">
+          <button type="button" class="nav-link active" data-page="settings" onclick="showPage('settings')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01A1.65 1.65 0 0 0 9 3.09V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <span>Settings</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="settings" class="section active">
+        <div class="page-head">
+          <div>
+            <h1>Settings</h1>
+            <p>Customize the entire Contest of Candy UI</p>
+          </div>
+          <button type="button" class="btn ghost" onclick="resetAll()">Reset all</button>
+        </div>
+
+        <div class="settings-grid">
+          <!-- Layout -->
+          <div class="settings-card">
+            <h2>Layout</h2>
+            <div class="field">
+              <label>Navigation style</label>
+              <div class="seg">
+                <button type="button" class="seg-btn active" data-value="topbar" onclick="setLayout('topbar')">Top bar</button>
+                <button type="button" class="seg-btn" data-value="sidebar" onclick="setLayout('sidebar')">Sidebar</button>
+              </div>
+            </div>
+            <div class="field">
+              <label>Content width</label>
+              <input type="range" id="content-width" min="720" max="1400" step="20" value="1080" oninput="applySetting('contentWidth', this.value)" />
+              <div class="range-val" id="content-width-val">1080px</div>
+            </div>
+            <div class="field">
+              <label>Page padding</label>
+              <input type="range" id="page-padding" min="12" max="48" step="2" value="32" oninput="applySetting('pagePadding', this.value)" />
+              <div class="range-val" id="page-padding-val">32px</div>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="settings-card">
+            <h2>Typography</h2>
+            <div class="field">
+              <label>Font family</label>
+              <select id="font-family" onchange="applySetting('fontFamily', this.value)">
+                <option value="Inter">Inter</option>
+                <option value="Outfit">Outfit</option>
+                <option value="Space Grotesk">Space Grotesk</option>
+                <option value="DM Sans">DM Sans</option>
+                <option value="Nunito">Nunito</option>
+                <option value="system-ui">System</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Base text size</label>
+              <input type="range" id="font-size" min="13" max="20" step="1" value="15" oninput="applySetting('fontSize', this.value)" />
+              <div class="range-val" id="font-size-val">15px</div>
+            </div>
+            <div class="field">
+              <label>Heading size</label>
+              <input type="range" id="heading-size" min="22" max="40" step="1" value="28" oninput="applySetting('headingSize', this.value)" />
+              <div class="range-val" id="heading-size-val">28px</div>
+            </div>
+            <div class="field">
+              <label>Font weight (body)</label>
+              <input type="range" id="font-weight" min="400" max="700" step="100" value="400" oninput="applySetting('fontWeight', this.value)" />
+              <div class="range-val" id="font-weight-val">400</div>
+            </div>
+          </div>
+
+          <!-- Colors -->
+          <div class="settings-card">
+            <h2>Colors</h2>
+            <div class="field row">
+              <label>Primary</label>
+              <input type="color" id="color-primary" value="#7c3aed" oninput="applySetting('colorPrimary', this.value)" />
+            </div>
+            <div class="field row">
+              <label>Accent</label>
+              <input type="color" id="color-accent" value="#ec4899" oninput="applySetting('colorAccent', this.value)" />
+            </div>
+            <div class="field row">
+              <label>Background</label>
+              <input type="color" id="color-bg" value="#f8fafc" oninput="applySetting('colorBg', this.value)" />
+            </div>
+            <div class="field row">
+              <label>Card</label>
+              <input type="color" id="color-card" value="#ffffff" oninput="applySetting('colorCard', this.value)" />
+            </div>
+            <div class="field row">
+              <label>Text</label>
+              <input type="color" id="color-text" value="#0f172a" oninput="applySetting('colorText', this.value)" />
+            </div>
+            <div class="field row">
+              <label>Muted text</label>
+              <input type="color" id="color-muted" value="#64748b" oninput="applySetting('colorMuted', this.value)" />
+            </div>
+            <div class="field row">
+              <label>Top bar / Sidebar</label>
+              <input type="color" id="color-nav" value="#1e1b4b" oninput="applySetting('colorNav', this.value)" />
+            </div>
+          </div>
+
+          <!-- Spacing & shapes -->
+          <div class="settings-card">
+            <h2>Boxes &amp; shapes</h2>
+            <div class="field">
+              <label>Card border radius</label>
+              <input type="range" id="radius" min="0" max="28" step="1" value="16" oninput="applySetting('radius', this.value)" />
+              <div class="range-val" id="radius-val">16px</div>
+            </div>
+            <div class="field">
+              <label>Card padding</label>
+              <input type="range" id="card-padding" min="12" max="36" step="2" value="20" oninput="applySetting('cardPadding', this.value)" />
+              <div class="range-val" id="card-padding-val">20px</div>
+            </div>
+            <div class="field">
+              <label>Gap between cards</label>
+              <input type="range" id="card-gap" min="8" max="32" step="2" value="16" oninput="applySetting('cardGap', this.value)" />
+              <div class="range-val" id="card-gap-val">16px</div>
+            </div>
+            <div class="field">
+              <label>Border thickness</label>
+              <input type="range" id="border-width" min="0" max="3" step="1" value="1" oninput="applySetting('borderWidth', this.value)" />
+              <div class="range-val" id="border-width-val">1px</div>
+            </div>
+            <div class="field">
+              <label>Shadow strength</label>
+              <input type="range" id="shadow" min="0" max="40" step="2" value="12" oninput="applySetting('shadow', this.value)" />
+              <div class="range-val" id="shadow-val">12</div>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="settings-card">
+            <h2>Buttons</h2>
+            <div class="field">
+              <label>Button size</label>
+              <input type="range" id="btn-size" min="8" max="20" step="1" value="12" oninput="applySetting('btnSize', this.value)" />
+              <div class="range-val" id="btn-size-val">12px padding</div>
+            </div>
+            <div class="field">
+              <label>Button radius</label>
+              <input type="range" id="btn-radius" min="0" max="24" step="1" value="10" oninput="applySetting('btnRadius', this.value)" />
+              <div class="range-val" id="btn-radius-val">10px</div>
+            </div>
+            <div class="field">
+              <label>Button font size</label>
+              <input type="range" id="btn-font" min="12" max="18" step="1" value="14" oninput="applySetting('btnFont', this.value)" />
+              <div class="range-val" id="btn-font-val">14px</div>
+            </div>
+            <div class="preview-row">
+              <button type="button" class="btn primary preview-btn">Primary</button>
+              <button type="button" class="btn ghost preview-btn">Ghost</button>
+            </div>
+          </div>
+
+          <!-- Animations -->
+          <div class="settings-card">
+            <h2>Animations</h2>
+            <div class="field row">
+              <label>Enable animations</label>
+              <label class="switch">
+                <input type="checkbox" id="anim-on" checked onchange="applySetting('animOn', this.checked)" />
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="field">
+              <label>Animation speed</label>
+              <input type="range" id="anim-speed" min="50" max="200" step="10" value="100" oninput="applySetting('animSpeed', this.value)" />
+              <div class="range-val" id="anim-speed-val">100%</div>
+            </div>
+            <div class="field">
+              <label>Hover lift</label>
+              <input type="range" id="hover-lift" min="0" max="8" step="1" value="3" oninput="applySetting('hoverLift', this.value)" />
+              <div class="range-val" id="hover-lift-val">3px</div>
+            </div>
+            <div class="field row">
+              <label>Page transition</label>
+              <label class="switch">
+                <input type="checkbox" id="page-trans" checked onchange="applySetting('pageTrans', this.checked)" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Nav chrome -->
+          <div class="settings-card">
+            <h2>Navigation chrome</h2>
+            <div class="field">
+              <label>Top bar height</label>
+              <input type="range" id="topbar-h" min="48" max="72" step="2" value="60" oninput="applySetting('topbarH', this.value)" />
+              <div class="range-val" id="topbar-h-val">60px</div>
+            </div>
+            <div class="field">
+              <label>Sidebar width</label>
+              <input type="range" id="sidebar-w" min="180" max="280" step="4" value="220" oninput="applySetting('sidebarW', this.value)" />
+              <div class="range-val" id="sidebar-w-val">220px</div>
+            </div>
+            <div class="field row">
+              <label>Show brand text</label>
+              <label class="switch">
+                <input type="checkbox" id="show-brand" checked onchange="applySetting('showBrand', this.checked)" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Preview -->
+          <div class="settings-card span-2">
+            <h2>Live preview</h2>
+            <p class="preview-note">Changes apply instantly across the whole app and save on this device.</p>
+            <div class="preview-box" id="preview-box">
+              <div class="preview-title">Sample card</div>
+              <p class="preview-text">This is how body text looks with your current settings. Buttons and spacing update live.</p>
+              <div class="preview-row">
+                <button type="button" class="btn primary">Action</button>
+                <button type="button" class="btn ghost">Secondary</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
