@@ -23,11 +23,9 @@
         <nav class="top-nav" id="top-nav"></nav>
       </div>
     </header>
-
     <main id="main"></main>
   </div>
 
-  <!-- Icon picker modal -->
   <div class="modal-overlay" id="icon-modal" onclick="closeIconModal(event)">
     <div class="modal" onclick="event.stopPropagation()">
       <div class="modal-head">
@@ -36,6 +34,16 @@
       </div>
       <input type="search" class="icon-search" id="icon-search" placeholder="Search icons..." oninput="filterIcons(this.value)" />
       <div class="icon-grid" id="icon-grid"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="add-modal" onclick="closeAddModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-head">
+        <h2>Add to page</h2>
+        <button type="button" class="modal-close" onclick="closeAddModal()">&times;</button>
+      </div>
+      <div class="add-grid" id="add-grid"></div>
     </div>
   </div>
 

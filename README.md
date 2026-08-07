@@ -1,17 +1,16 @@
 # Contest of Candy (COC)
 
-Full UI builder + settings.
+Visual page builder with live edit mode.
 
-## Features
-- Top bar or sidebar layout
-- Custom pages with icons (50+ icons)
-- Content blocks: heading, text, button, box, idle timer, surprise, image, divider
-- Full theme controls (colors, fonts, sizes, animations)
-- **Save / Export** JSON to share as a new default
-- Import config from JSON
+## Edit any page
+1. Create a page in Settings
+2. Open it → **Edit page**
+3. Click text to change it
+4. Use **+** / dashed slots to add blocks
+5. **Done** to exit edit mode
 
-## Routes
-- `/settings` — builder
-- `/[page-id]` — any custom page you create
+## Blocks
+Heading, text, button, box, idle timer, clicker, counter, progress bar, surprise, image, divider
 
-All preferences stored in localStorage.
+## Export
+Save / Export JSON → send it to set as default.
