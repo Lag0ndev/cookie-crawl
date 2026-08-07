@@ -1,9 +1,17 @@
 # Contest of Candy (COC)
 
-Settings-first UI shell with full live customization.
+Full UI builder + settings.
 
-- `/settings` — design controls (layout, fonts, colors, sizes, animations)
-- Top bar or sidebar navigation
-- All preferences saved in localStorage
+## Features
+- Top bar or sidebar layout
+- Custom pages with icons (50+ icons)
+- Content blocks: heading, text, button, box, idle timer, surprise, image, divider
+- Full theme controls (colors, fonts, sizes, animations)
+- **Save / Export** JSON to share as a new default
+- Import config from JSON
 
-Deploy on Vercel as a static site.
+## Routes
+- `/settings` — builder
+- `/[page-id]` — any custom page you create
+
+All preferences stored in localStorage.
